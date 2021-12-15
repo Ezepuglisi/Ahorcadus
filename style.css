@@ -1,0 +1,77 @@
+.contenido{
+    top:30%;
+    bottom: auto;
+    position: absolute;
+    left: 20%;
+}
+
+
+.esconder{
+    display: none;
+}
+
+.probar{
+    width: 20%;
+    background-color: red;
+    margin-left: 10px;
+}
+
+.game{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lifes{
+    color: black;
+    margin-bottom: 40px;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.lifes p{
+    text-align: center;
+}
+
+.play{
+    margin:auto;
+    text-align: center;
+}
+.play button{
+    margin-bottom: 5px;
+}
+
+.word{
+    display: table;
+    margin: auto;
+    justify-content: center;
+}
+.word div{
+    display: table-cell;
+    width: 50px;
+    height: 50px;
+    border: 0.2px solid gainsboro;
+}
+
+.word div p{
+    margin: 5px 5px 5px 5px;
+    text-align: center;
+    font-size: 2em;
+    display: none;
+}
+
+.game p{
+    text-align: center;
+}
+
+.lifes p {
+    margin: auto;
+    color: white;
+    background-color:brown;
+    padding: 2px;
+    font-size: 18px;
+}
