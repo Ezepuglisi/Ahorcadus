@@ -24,7 +24,7 @@
 }
 
 .lifes{
-    color: black;
+    color: white;
     margin-bottom: 40px;
 }
 
@@ -49,6 +49,7 @@ h2{
     display: table;
     margin: auto;
     justify-content: center;
+    color:white;
 }
 .word div{
     display: table-cell;
@@ -74,4 +75,23 @@ h2{
     background-color:brown;
     padding: 2px;
     font-size: 18px;
+}
+
+body{
+    background-image: url('img/bg3-8.png');
+    background-size: cover;
+    color: white;
+}
+
+.btn-letter, .btn-ok{
+    background-color:#10ACC0
+}
+
+.btn-ok:hover,  .btn-letter:hover{
+    background-color:#FBBA1A;
+    color: white;
+}
+
+#completeWord{
+    color:black
 }

@@ -11,38 +11,35 @@ let lifes = 6
 
 const words = [
     {
-        word: "VIKINGO",
+        word: "IDEAS"
     },
     {
-        word: "ROTONDA",
+        word: "HELICE"
     },
     {
-        word: "JAVASCRIPT"
+        word: "VIENTO"
     },
     {
-        word: "BIOMEDICINA"
+        word: "MOVIMIENTO"
     },
     {
-        word: "EXPERIENCIA"
+        word: "BURBUJA"
     },
     {
-        word: "TRABAJO"
+        word: "ASPAS"
     },
     {
-        word: "COMERCIO"
+        word: "DISEÑO"
     },
     {
-        word: "AUTOMOVIL"
+        word: "PROGRAMACION"
     },
     {
-        word: "FUTBOL"
+        word: "ANIMACION"
     },
     {
         word: "VIDEOJUEGO"
     },
-    {
-        word: "DISFRAZ"
-    }
 
 ]
 
@@ -62,7 +59,7 @@ function renderDivs(choice) {
 }
 
 function play() {
-    acumWord = ''
+    //acumWord = ''
     let option = words[Math.floor(Math.random() * words.length)]
 
     renderDivs(option)
@@ -89,7 +86,6 @@ function play() {
 play()
 
 
-
 function searchCoincidence(letter, word) { 
 
 
@@ -104,20 +100,58 @@ function searchCoincidence(letter, word) {
         }
 
     } else {
-        swal("Oops", "Te equivocaste :(", "error")
-
-        if (lifes > 0){
-
-            lifes = lifes - 1
-            lifesDiv.innerHTML += 
-            `<div class="col-md-2"><p>X</p></div>`
-            
-            oportunidades.innerHTML = `¡ Te quedan ${lifes} oportunidades !`
-        }else{
-            swal("Oops", "Perdiste :(", "error")
-
-        }
-
+        answerGameOver(lifes)
+        
     }
 
+}
+
+
+const answerGameOver = (life) =>{
+    console.log(lifes)
+    if(life == 1){
+        isGameOver()
+        document.querySelectorAll('.btn-letter').forEach((btn) => {
+            btn.disabled = true
+        })
+    }else{
+        isNotGameOver()
+    }
+}
+
+const isGameOver = () =>{
+    Swal.fire({
+        title: 'Perdiste :(',
+        text: "¿Quieres volver a intentarlo?",
+        icon: 'error',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, juguemos de nuevo!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.reload()
+        }
+      })
+
+    play()
+}
+
+const isNotGameOver = () =>{
+
+    Toastify({
+        text: "Letra incorrecta",
+        className: "error",
+        style: {
+          background: "red",
+        },
+        gravity:"bottom"
+      }).showToast();
+
+        lifes = lifes - 1
+        lifesDiv.innerHTML += 
+        `<div class="col-md-2"><p>X</p></div>`
+        
+        oportunidades.innerHTML = `¡ Te quedan ${lifes} oportunidades !`
+    
 }
